@@ -1,6 +1,7 @@
 var express 	= require('express');
 var user        = require('./models/user');
 var group        = require('./models/group');
+var team        = require('./models/team');
 
 var routes = express.Router();
 
@@ -18,6 +19,14 @@ routes.route("/groups/:id")
     .get(group.get)
     .put(group.put)
     .delete(group.delete);
+
+routes.route("/teams")
+    .get(team.getAll)
+    .post(team.post);
+routes.route("/teams/:id")
+    .get(team.get)
+    .put(team.put)
+    .delete(team.delete);
 
 // =================================================================
 // authenticated routes ============================================

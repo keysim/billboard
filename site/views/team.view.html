@@ -1,0 +1,35 @@
+<h1 style="text-align: center">Our team group</h1>
+<br>
+<div class="row center"> <!-- SITE & API -->
+    <div class="card" ng-repeat="person in web">
+        <div class="header-bg">
+            <h3>{{person.name}}</h3>
+        </div>
+        <div class="avatar">
+            <img src="" ng-src="{{'img/team/' + person.img}}" alt="keysim" />
+        </div>
+        <p class="card-desc">{{person.role}}</p>
+    </div>
+</div>
+<div class="row center"><!-- Android -->
+    <div class="card" ng-repeat="person in android">
+        <div class="header-bg">
+            <h3>{{person.name}}</h3>
+        </div>
+        <div class="avatar">
+            <img src="" ng-src="{{'img/team/' + person.img}}" alt="keysim" />
+        </div>
+        <p class="card-desc">{{person.role}}</p>
+    </div>
+</div>
+<div class="row center"><!-- Video -->
+    <div class="card" ng-repeat="person in video">
+        <div class="header-bg">
+            <h3>{{person.name}}</h3>
+        </div>
+        <div class="avatar">
+            <img src="" ng-src="{{'img/team/' + person.img}}" alt="keysim" />
+        </div>
+        <p class="card-desc">{{person.role}}</p>
+    </div>
+</div>

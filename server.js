@@ -43,6 +43,9 @@ app.options("/*", function(req, res, next){
 });
 
 app.use('/api', routes);
+
+app.use('/*', express.static(__dirname + '/site/index.html'));
+
 app.listen(config.port);
 
 console.log('Server on !');

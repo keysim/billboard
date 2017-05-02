@@ -1,0 +1,11 @@
+<nav class="navbar navbar-inverse">
+    <ul class="nav navbar-nav">
+        <li><a class="brand" href="."><img src="img/logo.png"></a></li>
+        <li class="active"><a href="billboard"><i class="fa fa-group fa-lg" aria-hidden="true"></i> <span>Billboard</span></a></li>
+        <li><a href="team"><i class="fa fa-address-book-o fa-lg" aria-hidden="true"></i> <span>Our team</span></a></li>
+    </ul>
+    <ul class="nav navbar-nav navbar-right">
+        <li><a href="new" ng-show="login"><i class="fa fa-plus fa-lg"></i></a></li>
+        <li><a ng-click="disconnect()" ng-show="login" class="disconnect"> {{login}} <i class="fa fa-user fa-lg"></i></a></li>
+    </ul>
+</nav>

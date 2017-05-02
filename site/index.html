@@ -1,56 +1,33 @@
 <!DOCTYPE html>
 <html lang="en" ng-app="mainApp">
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
-          crossorigin="anonymous" type="text/css">
-    <!-- Optional theme -->
+    <base href="/">
+    <title>KeyCam</title>
+    <link rel="icon" href="img/icon.png">
+    <link rel="stylesheet" href="/node_modules/bootstrap/dist/css/bootstrap.min.css" type="text/css">
+    <link rel="stylesheet" href="/node_modules/font-awesome/css/font-awesome.min.css" type="text/css">
+    <link rel="stylesheet" href="css/header.css">
     <link rel="stylesheet" href="css/group.css">
+    <link rel="stylesheet" href="css/team.css">
+    <link rel="stylesheet" href="css/main.css">
 </head>
 <body>
-<div class="container" style="font-size: 30px">
-    <h1 style="text-align: center">Billboard</h1>
-    <br>
-<div class="modal-content" ng-controller="groupCtrl" style="padding: 20px">
-    <table id="Content" class="table table-stripped">
-        <col width="120">
-        <col width="150">
-        <col>
-        <col width="140">
-        <thead>
-            <tr>
-                <th>Team name</th>
-                <th>Project name</th>
-                <th>Team members</th>
-                <th>Global Rating</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr ng-repeat="group in groups">
-                <td>
-                    {{group.team}}
-                </td>
-                <td>
-                    {{group.name}}
-                </td>
-                <td>
-                    <span class="label" ng-class="getClass($index)" ng-repeat="member in group.members track by $index">{{member}}</span>
-                </td>
-                <td>
-                    {{group.rating}}
-                </td>
-            </tr>
-        </tbody>
-    </table>
+<header></header>
+<div class="container">
+    <div ng-view></div>
 </div>
-</div>
+<footer></footer>
 
 <script src="/node_modules/jquery/dist/jquery.min.js"></script>
 <script src="/node_modules/angular/angular.min.js"></script>
 <script src="/node_modules/angular-cookies/angular-cookies.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-<script src="controller/group.js"></script>
+<script src="/node_modules/angular-route/angular-route.min.js"></script>
+<script src="/node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+<script src="controller/main.controller.js"></script>
+<script src="router.js"></script>
+<script src="controller/group.controller.js"></script>
+<script src="controller/footer.controller.js"></script>
+<script src="controller/header.controller.js"></script>
+<script src="controller/team.controller.js"></script>
 </body>
 </html>
