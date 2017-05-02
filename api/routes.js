@@ -4,6 +4,10 @@ var group        = require('./models/group');
 
 var routes = express.Router();
 
+routes.get("/",                 function (req, res) {
+    res.json({"success":true, "message": "Welcome to the KeyCam API"});
+});
+
 routes.post("/register",        user.register);
 routes.post("/authenticate",    user.authenticate);
 

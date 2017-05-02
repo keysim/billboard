@@ -4,4 +4,5 @@ table, .table {
 
 .label {
     margin: 2px !important;
+    display: inline-block;
 }

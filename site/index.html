@@ -15,27 +15,31 @@
     <br>
 <div class="modal-content" ng-controller="groupCtrl" style="padding: 20px">
     <table id="Content" class="table table-stripped">
+        <col width="120">
+        <col width="150">
         <thead>
-        <th>Team name</th>
-        <th>Project name</th>
-        <th>Team members</th>
-        <th>Global Rating</th>
+            <tr>
+                <th>Team name</th>
+                <th>Project name</th>
+                <th>Team members</th>
+                <th>Global Rating</th>
+            </tr>
         </thead>
         <tbody>
-        <tr ng-repeat="group in groups">
-            <td>
-                {{group.team}}
-            </td>
-            <td>
-                {{group.name}}
-            </td>
-            <td>
-                <span class="label" ng-class="getClass($index)" ng-repeat="member in group.members track by $index">{{member}}</span>
-            </td>
-            <td>
-                {{group.rating}}
-            </td>
-        </tr>
+            <tr ng-repeat="group in groups">
+                <td>
+                    {{group.team}}
+                </td>
+                <td>
+                    {{group.name}}
+                </td>
+                <td>
+                    <span class="label" ng-class="getClass($index)" ng-repeat="member in group.members track by $index">{{member}}</span>
+                </td>
+                <td>
+                    {{group.rating}}
+                </td>
+            </tr>
         </tbody>
     </table>
 </div>

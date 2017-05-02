@@ -17,7 +17,6 @@ mainApp.controller('groupCtrl', function($scope, $http, $cookies, $timeout, $loc
         return res;
     };
     $http.get(apiUrl + "groups").then(function (res) {
-        console.log(JSON.parse("[" + res.data[0].members + "]"));
         $scope.groups = res.data;
     });
 });
