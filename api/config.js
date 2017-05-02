@@ -1,6 +1,6 @@
 var config = {
     secret: 'keycam',
-    port : 974,
+    port : 4242,
     //url : ".com:" + 3000,
     db : {url:'mongodb://keycam:keycam974@127.0.0.1:27017/keycam', port:27017, name:'keycam'},
     //db : {url:'mongodb://keycam:keycam974@163.5.84.197:27017/keycam', port:27017, name:'keycam'},
