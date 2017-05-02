@@ -21,5 +21,5 @@ var toJsonClean = { // remove __v and set _id to id ! =D
 // set up a mongoose models
 module.exports = {
     "user"          :   mongoose.model('User', new Schema(config.model.user).set('toJSON', toJsonClean)),
-    "article"        :   mongoose.model('Article', new Schema(config.model.article).set('toJSON', toJsonClean))
+    "group"          :   mongoose.model('Group', new Schema(config.model.group).set('toJSON', toJsonClean))
 };

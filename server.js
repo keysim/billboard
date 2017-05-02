@@ -22,19 +22,24 @@ mongoose.connect(config.db.url, function(err) {
 });
 
 app.set('superSecret', config.db.secret);
-app.use("/site", express.static(__dirname + '/site'));
+app.use("/", express.static(__dirname + '/site'));
+app.use("/node_modules", express.static(__dirname + '/node_modules'));
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 //app.use(morgan('dev'));// Debug mode
 
 app.use(function (req, res, next) {
-	res.setHeader('Access-Control-Allow-Origin', 'http://audrey.lewogona.com');
-	res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE');
+	res.header("Access-Control-Allow-Origin", "*");
+	res.header('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE,OPTIONS');
+	res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
 	next();
 });
 
-app.get('/', function(req, res) {
-	res.send('The site !');
+app.options("/*", function(req, res, next){
+	res.header('Access-Control-Allow-Origin', '*');
+	res.header('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE,OPTIONS');
+	res.header('Access-Control-Allow-Headers', 'Content-Type, Authorization, Content-Length, X-Requested-With');
+	res.send(200);
 });
 
 app.use('/api', routes);

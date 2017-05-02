@@ -1,10 +1,19 @@
 var express 	= require('express');
 var user        = require('./models/user');
+var group        = require('./models/group');
 
 var routes = express.Router();
 
-routes.post("/register", user.register);
-routes.post("/authenticate", user.authenticate);
+routes.post("/register",        user.register);
+routes.post("/authenticate",    user.authenticate);
+
+routes.route("/groups")
+    .get(group.getAll)
+    .post(group.post);
+routes.route("/groups/:id")
+    .get(group.get)
+    .put(group.put)
+    .delete(group.delete);
 
 // =================================================================
 // authenticated routes ============================================
@@ -12,11 +21,12 @@ routes.post("/authenticate", user.authenticate);
 routes.use(user.tokenMiddleware);
 routes.get("/", function(req, res) { res.json({message: 'Hi ' + req.user.login}); }); // Say hi to the authenticate user
 
-routes.get("/users",            user.getUsers);             // Get all the users
-routes.get("/user",             user.getUser);              // Get the current authentified user data
-routes.get("/user/:id",         user.getUserById);          // Get user by them id
-routes.post("/user",            user.updateUser);           // Update user informations
-routes.get("/user/:id/articles",article.getArticleByAuthor);   // Get all articles of a user with his id
+routes.route("/users")
+    .get(user.getAll);
+routes.route("/users/:id")
+    .get(user.get)
+    .put(user.put)
+    .delete(user.delete);
 
 
 module.exports = routes;
