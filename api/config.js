@@ -2,7 +2,8 @@ var config = {
     secret: 'keycam',
     port : 974,
     //url : ".com:" + 3000,
-    db : {url:'mongodb://keycam:keycam974@163.5.84.197:27017/keycam', port:27017, name:'keycam'}, // launch "mongod" then take port and host printed in the command line.
+    db : {url:'mongodb://keycam:keycam974@localhost:27017/keycam', port:27017, name:'keycam'},
+    //db : {url:'mongodb://keycam:keycam974@163.5.84.197:27017/keycam', port:27017, name:'keycam'},
     model:{
         user:{
             login: {type: String, required: true},
