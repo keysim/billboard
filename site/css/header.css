@@ -2,3 +2,7 @@
     line-height: 35px;
     font-size: 18px;
 }
+
+.navbar-right {
+    margin-right: 0;
+}

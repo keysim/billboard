@@ -4,3 +4,10 @@ var postConfig = {headers : {'Content-Type': 'application/x-www-form-urlencoded'
 
 mainApp.controller('mainController', function() {
 });
+
+angular.module('mainApp')
+    .filter('to_trusted', ['$sce', function($sce){
+        return function(text) {
+            return $sce.trustAsHtml(text);
+        };
+    }]);

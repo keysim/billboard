@@ -6,6 +6,8 @@ mainApp.directive("header", function(){
     };
 });
 
-mainApp.controller('headerCtrl', function($scope, $http) {
-
+mainApp.controller('headerCtrl', function($scope, $http, $location) {
+    $scope.getClass = function (path) {
+        return $location.path() === "/" + path ? "active" : "";
+    }
 });

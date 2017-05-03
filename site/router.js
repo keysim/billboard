@@ -11,6 +11,14 @@ mainApp.config(['$routeProvider', '$locationProvider', function($routeProvider, 
             templateUrl: 'views/team.view.html',
             controller: 'teamCtrl'
         })
+        .when('/login', {
+            templateUrl: 'views/login.view.html',
+            controller: 'loginCtrl'
+        })
+        .when('/register', {
+            templateUrl: 'views/register.view.html',
+            controller: 'loginCtrl'
+        })
         .otherwise({
             redirectTo: '/'
         });
