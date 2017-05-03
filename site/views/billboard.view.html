@@ -15,20 +15,29 @@
         </tr>
         </thead>
         <tbody>
-        <tr ng-repeat="group in groups">
-            <td>
-                {{group.team}}
-            </td>
-            <td>
-                {{group.name}}
-            </td>
-            <td>
-                <span class="label" ng-class="getClass($index)" ng-repeat="member in group.members track by $index">{{member}}</span>
-            </td>
-            <td>
-                {{group.rating}}
-            </td>
-        </tr>
+            <tr ng-repeat="group in groups">
+                <td>
+                    {{group.team}}
+                </td>
+                <td>
+                    {{group.name}}
+                </td>
+                <td>
+                    <span class="label" ng-class="getClass($index)" ng-repeat="member in group.members track by $index">{{member}}</span>
+                </td>
+                <td>
+                    <div class="input-group" ng-if="email_log !== 'Login'">
+                        <input type="text" class="form-control" placeholder="Rate" value="{{group.rating}}" id="{{group.id}}">
+                        <span ng-show="group.name !== 'KeyCam'" class="input-group-btn">
+                            <button class="btn btn-default" type="button" ng-click="change(group.id)">ok</button>
+                        </span>
+                        <span ng-show="group.name === 'KeyCam'" class="input-group-btn">
+                            <button class="btn btn-default" type="button" ng-click="change(group.id)"><i class="fa fa-thumbs-up" aria-hidden="true"></i></button>
+                        </span>
+                    </div>
+                    {{email_log === 'Login' ? group.rating : ''}}
+                </td>
+            </tr>
         </tbody>
     </table>
 </div>

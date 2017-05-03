@@ -5,6 +5,7 @@
         <li ng-class="getClass('team')"><a href="team"><i class="fa fa-address-book-o fa-lg" aria-hidden="true"></i> <span>Our team</span></a></li>
     </ul>
     <ul class="nav navbar-nav navbar-right">
-        <li><a href="login">Login</a></li>
+        <li><a href="login" ng-show="email_log === 'Login'">Login</a></li>
+        <li><a ng-click="disconnect()" ng-show="email_log !== 'Login'" class="disconnect"> {{email_log}} <i class="fa fa-user fa-lg"></i></a></li>
     </ul>
 </nav>

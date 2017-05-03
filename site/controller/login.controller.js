@@ -1,4 +1,4 @@
-mainApp.controller('loginCtrl', function($scope, $http, $location, $cookies, $timeout) {
+mainApp.controller('loginCtrl', function($scope, $http, $location, $cookies, $timeout, $window) {
     $scope.loginBtn = "Login";
     $scope.loginClass = "btn-primary";
 
@@ -35,9 +35,9 @@ mainApp.controller('loginCtrl', function($scope, $http, $location, $cookies, $ti
                     }
                     else {
                         $scope.loginClass = "btn-success login_in";
-                        $scope.loginBtn = "Welcome " + $scope.login;
+                        $scope.loginBtn = "Welcome";
                         $cookies.put("token", res.data.token);
-                        $cookies.put("login", $scope.login);
+                        $cookies.put("email", $scope.email);
                         $timeout(function () {
                             $window.location.href = "./";
                         }, 400);
