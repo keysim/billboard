@@ -26,7 +26,7 @@ module.exports = {
 					var newOne = new Collection(data);
 					newOne.save(function(err, data) {
 						if (err) {
-							res.json({success: false, message:err});
+							res.status(400).json({success: false, message:err});
 							return console.error(err);
 						}
 						res.status(201).json({success: true, message: COLLECTION_NAME + " created successfully", id:data.id});
@@ -41,14 +41,14 @@ module.exports = {
 			email: req.body.email
 		}, function(err, user) {
 			if (err) {
-				res.json({success: false, message:err});
+				res.status(400).json({success: false, message:err});
 				return console.error(err);
 			}
 			if (!user) {
-				res.json({ success: false, message: 'User not found.' });
+				res.status(400).json({ success: false, message: 'User not found.' });
 			} else if (user) {
 				if (user.password != req.body.password) {
-					res.json({ success: false, message: 'Wrong password.' });
+					res.status(400).json({ success: false, message: 'Wrong password.' });
 				} else {
 					// create a token
 					var token = jwt.sign(user, config.secret, {

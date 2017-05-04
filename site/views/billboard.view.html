@@ -23,7 +23,7 @@
                     {{group.name}}
                 </td>
                 <td>
-                    <span class="label" ng-class="getClass($index)" ng-repeat="member in group.members track by $index">{{member}}</span>
+                    <span class="label names" ng-class="getClass($index)" ng-repeat="member in group.members track by $index">{{member | capitalize}}</span>
                 </td>
                 <td>
                     <div class="input-group" ng-if="email_log !== 'Login'">

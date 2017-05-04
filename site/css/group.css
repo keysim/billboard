@@ -6,3 +6,11 @@ table, .table {
     margin: 2px !important;
     display: inline-block;
 }
+
+.names {
+    font-weight: normal;
+}
+
+table td {
+    vertical-align: middle !important;
+}

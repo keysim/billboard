@@ -8,7 +8,7 @@ var bodyParser  = require('body-parser');
 var morgan      = require('morgan');
 var mongoose    = require('mongoose');
 var config		= require('./api/config');
-var routes		= require('./api/routes');
+var routes		= require('./api/router');
 
 // =================================================================
 // configuration ===================================================

@@ -28,6 +28,7 @@
     "angular": "^1.6.4",
     "angular-cookies": "^1.6.4",
     "angular-route": "^1.6.4",
+    "angular-socket-io": "^0.7.0",
     "body-parser": "^1.17.1",
     "bootstrap": "^3.3.7",
     "express": "^4.15.2",
@@ -36,6 +37,7 @@
     "jsonwebtoken": "^7.4.0",
     "mongodb": "^2.2.26",
     "mongoose": "^4.9.7",
-    "morgan": "^1.8.1"
+    "morgan": "^1.8.1",
+    "socket.io": "^1.7.3"
   }
 }
