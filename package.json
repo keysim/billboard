@@ -1,7 +1,7 @@
 {
-  "name": "keysite",
+  "name": "billboard",
   "version": "1.0.0",
-  "description": "Site of keycam",
+  "description": "Billboard site",
   "main": "server.js",
   "scripts": {
     "stop": "kill $(cat pid)",
@@ -11,7 +11,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+ssh://git@github.com/keysim/keysite.git"
+    "url": "git+ssh://git@github.com/keysim/billboard.git"
   },
   "keywords": [
     "cam",
@@ -21,9 +21,9 @@
   "author": "Keysim",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/keysim/keysite/issues"
+    "url": "https://github.com/keysim/billboard/issues"
   },
-  "homepage": "https://github.com/keysim/keysite#readme",
+  "homepage": "https://github.com/keysim/billboard#readme",
   "dependencies": {
     "angular": "^1.6.4",
     "angular-cookies": "^1.6.4",
